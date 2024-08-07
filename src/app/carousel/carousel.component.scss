@@ -1,0 +1,86 @@
+.carousel-container {
+    position: relative;
+    .slide-container {
+        width: 80%;
+        overflow: hidden;
+        margin: auto;
+        --d: 9s;
+        position: relative;
+        /* duration */
+
+        .slides {
+            display: flex;
+            gap: 8px;
+            position: relative;
+            animation-name: run;
+            animation-duration: var(--d);
+            animation-timing-function: linear;
+            animation-iteration-count: 2;
+            animation-play-state: running;
+            width: 50%;
+
+            .slide {
+                display: flex;
+                width: 200px;
+                height: 200px;
+                // transition: transform 0.5s ease;
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                    aspect-ratio: 1.5;
+                    object-fit: contain;
+                }
+            }
+
+            &:hover {
+                animation-play-state: paused;
+
+                // .slide {
+                //     // transform: scale(1);
+                //     transition: transform 0.5s ease;
+                // }
+            }
+        }
+
+        .pagination {
+            height: 5px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 10px;
+
+            .dot {
+                background-color: gray;
+                width: 40px;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .nav-btns {
+        position: absolute;
+        width: 100%;
+        top: 40%;
+
+        .next {
+            position: absolute;
+            right: 0;
+        }
+
+        .prev {
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+@keyframes run {
+    75% {
+        transform: translate(-300%)
+    }
+
+    75.01% {
+        transform: translate(100%)
+    }
+}

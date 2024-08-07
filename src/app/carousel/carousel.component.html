@@ -1,0 +1,26 @@
+<!-- @for image of imagelist {
+<img src="image" alt="random-image" />
+} -->
+<div class="carousel-container">
+  <div class="slide-container">
+    <div class="slides">
+      <div id="{{ image.id }}" class="slide" *ngFor="let image of imagelist">
+        <img src="{{ image.url }}" alt="random-image" />
+      </div>
+    </div>
+
+    <div class="pagination">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="nav-btns">
+    <div (click)="showPrev()" class="prev">
+      <i class="fas fa-angle-left"></i>
+    </div>
+    <div (click)="showNext()" class="next">
+      <i class="fas fa-angle-right"></i>
+    </div>
+  </div>
+</div>
